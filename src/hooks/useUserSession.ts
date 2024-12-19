@@ -30,7 +30,6 @@ export function useUserSession(initialUser: User|null = null) {
 		})
 
 		return () => unsubscribe()
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	useEffect(() => {
