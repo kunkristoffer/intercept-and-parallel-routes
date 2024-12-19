@@ -1,19 +1,91 @@
-import Link from "next/link";
+"use client"
 
-export function HeaderNavBar() {
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+function NavBarLink({
+  href,
+  label,
+  ariaLabel,
+  prefetch = true
+}: {
+  href: string;
+  label: string;
+  ariaLabel?: string;
+  prefetch?: boolean
+}) {
+  return (
+    <Link
+      href={href}
+      aria-label={ariaLabel}
+      className="px-4 font-bold md:portrait:px-2 lg:px-4 text-kv-black md:hover:underline"
+      prefetch={prefetch}
+    >
+      {label}
+    </Link>
+  );
+}
+
+export function HeaderNavbar() {
+  const pathName = usePathname()
+  if (pathName !== "/")
+    return (
+      <nav>
+        <div className="hidden h-auto md:flex items-center gap-2">
+          <NavBarLink
+            href="/newsletter"
+            label="Artikler"
+            ariaLabel="Naviger til innholdskatalogen for våre artikler"
+            prefetch={false}
+          />
+          <NavBarLink
+            href="/"
+            label="Medarbeiderskap"
+            ariaLabel="Naviger til søstersiden vår for mer informasjon om merarbeiderskap"
+          />
+          <NavBarLink
+          href="/booking"
+          label="Book møte"
+          ariaLabel="gå til denne seksjonen for å booke et møte"
+          prefetch={false}
+        />
+        </div>
+      </nav>
+    );
+
   return (
     <nav>
-      <ul className="flex gap-2">
-        <li className="hover:text-orange-500">
-          <Link href="/news">news (modal)</Link>
-        </li>
-        <li className="hover:text-orange-500">
-          <Link href="/blog">blog</Link>
-        </li>
-        <li className="hover:text-orange-500">
-          <Link href="/about">about</Link>
-        </li>
-      </ul>
+      <div className="hidden h-auto md:flex items-center gap-2">
+        <NavBarLink
+          href="/#section-model"
+          label="Modell"
+          ariaLabel="gå til denne seksjonen og les om modellen vår"
+        />
+        <NavBarLink
+          href="/#section-services"
+          label="Tjenester"
+          ariaLabel="gå til denne seksjonen for å lese om tjenestene våre"
+        />
+        <NavBarLink
+          href="/#section-history"
+          label="Historier"
+          ariaLabel="gå til denne seksjonen for å lese om noen av historiene om oss"
+        />
+        <NavBarLink
+          href="/#section-success"
+          label="Suksess"
+          ariaLabel="gå til denne seksjonen for å lese om suksessen våre kunder har hatt"
+        />
+        <NavBarLink
+          href="/booking"
+          label="Book møte"
+          ariaLabel="gå til denne seksjonen for å booke et møte"
+          prefetch={false}
+        />
+      </div>
+      {/* <div className="px-4 md:hidden">
+        <Hamburger />
+      </div> */}
     </nav>
   );
 }
