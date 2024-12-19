@@ -1,5 +1,6 @@
 import { Modal } from "@/components/layout/modal";
 
+export const dynamic = 'force-dynamic'
 export default function Page() {
   return (
     <Modal>

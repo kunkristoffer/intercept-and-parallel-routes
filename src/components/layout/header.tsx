@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { HeaderNavbar } from "../navigations/navbar";
-import { UserMenu } from "../navigations/UserMenu";
+import { HeaderNavbar } from "@/components/ui/menu/navbar/header";
+import { UserMenu } from "@/components/ui/menu/user/container";
 
 export function Header() {
   return (
