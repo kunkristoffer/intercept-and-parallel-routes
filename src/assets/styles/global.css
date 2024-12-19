@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --kv-black: #0b1215;
+  --kv-white: #fcfcfc;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  width: 100%;
+  min-height: 100svh;
+  color: var(--kv-black);
+  background: var(--kv-white);
+}
+
+main {
+  flex: 1;
+  max-width: 1536px;
+}
+
+#main-landing section:nth-child(even) {
+  background-color: #fad3bb;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+button > h2 {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+h3 {
+  font-size: 1.4rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  font-family: var(--font-heading);
+}
+
+@media not all and (min-width: 640px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
