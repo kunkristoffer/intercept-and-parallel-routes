@@ -57,18 +57,18 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  children,
   modal,
+  children,
 }: Readonly<{
-  children: React.ReactNode;
   modal: React.ReactNode;
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="nb">
       <body>
         <Header />
-        {children}
         {modal}
+        {children}
         <Footer />
       </body>
     </html>
