@@ -1,30 +1,7 @@
 "use client"
 
-import Link from "next/link";
 import { usePathname } from "next/navigation";
-
-function NavBarLink({
-  href,
-  label,
-  ariaLabel,
-  prefetch = true
-}: {
-  href: string;
-  label: string;
-  ariaLabel?: string;
-  prefetch?: boolean
-}) {
-  return (
-    <Link
-      href={href}
-      aria-label={ariaLabel}
-      className="px-4 font-bold md:portrait:px-2 lg:px-4 text-kv-black md:hover:underline"
-      prefetch={prefetch}
-    >
-      {label}
-    </Link>
-  );
-}
+import { NavBarLink } from "../ui/buttons/links";
 
 export function HeaderNavbar() {
   const pathName = usePathname()

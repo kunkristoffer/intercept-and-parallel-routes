@@ -11,3 +11,26 @@ export function ButtonLink({ href, text, preFetch = true }: { href: string; text
     </Link>
   );
 }
+
+export function NavBarLink({
+  href,
+  label,
+  ariaLabel,
+  prefetch = true
+}: {
+  href: string;
+  label: string;
+  ariaLabel?: string;
+  prefetch?: boolean
+}) {
+  return (
+    <Link
+      href={href}
+      aria-label={ariaLabel}
+      className="px-4 font-bold md:portrait:px-2 lg:px-4 text-kv-black md:hover:underline"
+      prefetch={prefetch}
+    >
+      {label}
+    </Link>
+  );
+}

@@ -1,10 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { HeaderNavbar } from "../navigations/navbar";
+import { UserMenu } from "../navigations/UserMenu";
 
-export async function Header() {
-  /* const { currentUser } = await getAuthenticatedAppForUser(); */
-
+export function Header() {
   return (
     <header className="w-full flex items-center justify-between 3xl:justify-around p-6">
       <Link href="/" aria-label="Gå til landingssiden">
@@ -17,7 +16,7 @@ export async function Header() {
         />
       </Link>
       <HeaderNavbar />
-      {/* <UserMenu initialUser={currentUser?.toJSON() as User} /> */}
+      <UserMenu />
     </header>
   );
 }

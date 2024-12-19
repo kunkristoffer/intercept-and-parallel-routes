@@ -1,8 +1,10 @@
+"use server"
+
 import Image from "next/image";
 import Link from "next/link";
 import { FaBuilding, FaEnvelope, FaLinkedinIn, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 
-export function Footer() {
+export async function Footer() {
   return (
     <footer className="w-full h-fit flex flex-col items-center justify-center pt-12 pb-8 text-kv-white bg-[#373131]">
       <div className="flex max-sm:flex-col items-center justify-center gap-12 w-3/4 pb-12">
