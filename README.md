@@ -1,3 +1,7 @@
+# fix for error
+https://github.com/vercel/next.js/issues/70366
+
+
 Route (app)                              Size     First Load JS
 ┌ ○ /                                    4.23 kB         119 kB
 ├ ○ /_not-found                          979 B           106 kB
